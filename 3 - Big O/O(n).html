@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Big O | O(n)</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/* What is goof code?
+1.   Readable
+2.   Scalable => Big O */
+
+/* ===== RUNTIME ===== */
+const nemo = ['nemo'];
+const everyone = ['dory', 'bruce', 'marlin', 'gill', 'bloat', 'nigel', 'squirt', 'dara', 'hank', 'nemo'];
+const large = new Array(100).fill('nemo');
+
+function findNemo(array) {
+    const t0 = performance.now()
+    for(let i = 0 ; i < array.length; i++) {
+        if(array[i]==='nemo'){
+            console.log('Found Nemo')
+        }
+    }
+    const t1 = performance.now()
+    console.log('findNemo runtime took '+ (t1 - t0) +' millseconds');
+}
+
+findNemo(nemo);
+findNemo(everyone);
+findNemo(large);
+
+
+
+</script>
+</body>
+</html>
