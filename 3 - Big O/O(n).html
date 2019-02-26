@@ -12,7 +12,8 @@
 
 /* What is goof code?
 1.   Readable
-2.   Scalable => Big O */
+2.   Scalable => Big O 
+Big O notation measures the relation between the increase in operations and the amount of inputs  */
 
 /* ===== RUNTIME ===== */
 const nemo = ['nemo'];
@@ -30,11 +31,11 @@ function findNemo(array) {
     console.log('findNemo runtime took '+ (t1 - t0) +' millseconds');
 }
 
+/* Runtime increases linear with each added input => O(n) */
+
 findNemo(nemo);
 findNemo(everyone);
 findNemo(large);
-
-
 
 </script>
 </body>
