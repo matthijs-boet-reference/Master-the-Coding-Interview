@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Big O | O(n)</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+    <h1>Big O notation measures the relation between the amount of operations and the increase of inputs.</h3>
+        <h3>What is good code?</h3>
+        <ul>
+            <li>Readable</li>
+            <li>Scalable => Big O </li>
+        </ul>
+
+        <h3>Big O notation</h3>
+        <dl>
+            <dt>O(1) - Constant time.</dt>
+            <dd>Runtime remains constant with each added input.</dd>
+            <dt>O(log n)</dt>
+            <dd></dd>
+            <dt>O(n) - Linear time.</dt>
+            <dd>Runtime increases linear with each added input.</dd>
+            <dt>O(n log n)</dt>
+            <dd></dd>
+            <dt>O(n^2)</dt>
+            <dd></dd>
+            <dt>O(2^n)</dt>
+            <dd></dd>
+            <dt>O(n!)</dt>
+            <dd></dd>
+        </dl>
+    <img src="./big o complexity chart.jpeg" alt="big o complexity chart">
 <script type="text/javascript">
 
+const boxes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
+function compressFirstBox(boxes){
+    console.log(boxes[0]);
+}
+compressFirstBox(boxes);     // O(1)
+
+function compressTwoBoxes(boxes){
+    console.log(boxes[0]);  // O(1)
+    console.log(boxes[1]);  // O(1)
+}                           // ====
+compressTwoBoxes(boxes);    // O(2)
 
 </script>
 </body>
+
 </html>

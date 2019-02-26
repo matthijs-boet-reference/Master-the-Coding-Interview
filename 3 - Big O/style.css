@@ -1,0 +1,21 @@
+body {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+img {
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+dt {
+    font-weight: bold;
+}
+dd{
+    font-style: italic;
+    margin-bottom: 1em;
+    margin-left: 5px;
+}

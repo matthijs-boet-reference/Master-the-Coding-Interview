@@ -19,12 +19,12 @@
 
         <h3>Big O notation</h3>
         <dl>
-            <dt>O(1)</dt>
-            <dd></dd>
+            <dt>O(1) - Constant time.</dt>
+            <dd>Runtime remains constant with each added input.</dd>
             <dt>O(log n)</dt>
             <dd></dd>
-            <dt>O(n)</dt>
-            <dd>Runtime increases linear with each added input. Linear time.</dd>
+            <dt>O(n) - Linear time.</dt>
+            <dd>Runtime increases linear with each added input.</dd>
             <dt>O(n log n)</dt>
             <dd></dd>
             <dt>O(n^2)</dt>
@@ -37,24 +37,7 @@
     <img src="./big o complexity chart.jpeg" alt="big o complexity chart">
 <script type="text/javascript">
 
-const nemo = ['nemo'];
-const everyone = ['dory', 'bruce', 'marlin', 'gill', 'bloat', 'nigel', 'squirt', 'dara', 'hank', 'nemo'];
-const large = new Array(100).fill('nemo');
 
-function findNemo(array) {
-    const t0 = performance.now()
-    for (let i = 0; i < array.length; i++) {    
-        if (array[i] === 'nemo') {              // O(n)
-            console.log('Found Nemo')           // O(n)
-        }
-    }                                           // O(2n)
-    const t1 = performance.now()
-    console.log('findNemo runtime took ' + (t1 - t0) + ' millseconds'); 
-}
-
-findNemo(nemo);
-findNemo(everyone);
-findNemo(large);
 
 </script>
 </body>
