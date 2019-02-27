@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Big O Notation | O(1) | O(log n) | O(n) | O(n log (n)) | O(n^2) | O(2^n) | O(n!)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Big O notation measures the relation between the amount of inputs and the increase of operations.</h3>
+        <br>
+        <h3>What is good code?</h3>
+        <ul>
+            <li>Readable</li>
+            <li>Scalable => Big O </li>
+        </ul>
+        <br>
+        <h3>Big O notation</h3>
+        <dl>
+            <dt>O(1) - Constant time.</dt>
+            <dd>Operations remain constant with each added input. <br>Constant no loops.</dd>
+            <dt>O(log n) - Logarithmic time.</dt>
+            <dd><br>Usually searching algorithms have log n if they are sorted (Binary Search)</dd>
+            <dt>O(n) - Linear time.</dt>
+            <dd>Operations increase linear with each added input. <br>Linear- for loops, while loops through n items
+            </dd>
+            <dt>O(n log (n)) - Log Liniear</dt>
+            <dd><br>Log Liniear- usually sorting operations</dd>
+            <dt>O(n^2) - Quadratic Time</dt>
+            <dd>Operations increase quadratic with each added input. <br>Every element in a collection needs to be
+                compared to every other element. <br>Two nested loops.
+            </dd>
+            <dt>O(2^n) - Exponential time.</dt>
+            <dd><br>recursive algorithms that solves a problem of size N</dd>
+            <dt>O(n!) - Factorial time.</dt>
+            <dd>You are adding a loop for every element
+            </dd>
+        </dl>
+        <br>
+        <h3>Rules for calculating Big O notation</h3>
+        <ol>
+            <li>Worst Case - Always assume worst case scenario.</li>
+            <li>Remove Constants - O(100 + 5n) => O(n)</li>
+            <li>Different terms for inputs - Look out for different inputs, they get their own term, because they
+                represent different values => O(n + m) or O(a * b)</li>
+            <li>Drop Non Dominant Terms - We only care about the most important non-scaling term O(n + n^2) => O(n^2)</li>
+        </ol>
+        <br>
+        <h3>What can cause time in a function => Time Complexity!</h3>
+        <ul>
+            <li>Operations (+, -, *, /)</li>
+            <li>Comparisons (<,>, ==)</li>
+            <li>Looping (for, while)</li>
+            <li>Outside Function call (function())</li>
+        </ul>
+        <br>
+        <h3>What causes allocation in memory => Space Complexity!</h3>
+        <ul>
+            <li>Variables</li>
+            <li>Data Structures</li>
+            <li>Function Call</li>
+            <li>Allocations</li>
+        </ul>
+        <br>
+        <img src="./big o complexity chart.jpeg" alt="big o complexity chart">
+        <script type="text/javascript">
+
+        /*  ------------------------- CONSTANT TIME - O(1) -------------------------------------------------------*/
+        const boxes = [1, 2, 3, 4, 5];
+
+        const compressFirstBox = boxes => console.log(boxes[0]);
+        compressFirstBox(boxes); // O(1)
+
+        const compressTwoBoxes = boxes => {
+            console.log(boxes[0]); // O(1)
+            console.log(boxes[1]); // O(1)
+        } // ====
+        compressTwoBoxes(boxes); // O(2)
+
+        const compressBoxesTwice = boxes => {
+            boxes.forEach(boxes => {
+                console.log(boxes); // O(n)
+            });
+            boxes.forEach(boxes => { // O(n)
+                console.log(boxes);
+            });
+        }
+        compressBoxesTwice(boxes); // O(2n)
+
+        /*  -------------------------- LINEAR TIME - O(n) -------------------------------------------------------*/
+        const nemo = ['nemo'];
+        const everyone = ['dory', 'bruce', 'marlin', 'gill', 'bloat', 'nigel', 'squirt', 'dara', 'hank', 'nemo'];
+        const large = new Array(100).fill('nemo');
+
+        function findNemo(array) {
+            const t0 = performance.now()
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === 'nemo') { // O(n)
+                    console.log('Found Nemo') // O(n)
+                }
+            } // O(2n)
+            const t1 = performance.now()
+            console.log('findNemo runtime took ' + (t1 - t0) + ' millseconds');
+        }
+
+        findNemo(nemo);
+        findNemo(everyone);
+        findNemo(large);
+
+        /*  -------------------------- QUADRATIC TIME - O(n^2) ------------------------------------------------*/
+        const letters = ['a', 'b', 'c', 'd', 'e'];
+
+        const logAllPairs = array => {
+            for (let i = 0; i < array.length; i++) {
+                for (let j = 0; j < array.length; j++) {
+                    console.log(array[i], array[j]);
+                }
+            }
+        }
+        logAllPairs(letters);
+
+        /*  -------------------------- FACTORIAL TIME O(n!) ----------------------------------------------------*/
+        function factorialize(num) {
+            if (num === 0 || num === 1)
+                console.log(1);
+            for (var i = num - 1; i >= 1; i--) {
+                num *= i;
+            }
+            console.log(num);
+        }
+        factorialize(5);
+</script>
+</body>
+
+</html>
