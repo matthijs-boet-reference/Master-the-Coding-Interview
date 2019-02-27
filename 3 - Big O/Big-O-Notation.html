@@ -89,6 +89,9 @@
         }
         compressBoxesTwice(boxes); // O(2n)
 
+        /*  ------------------------- LOGARITHMIC TIME - O(log n) -----------------------------------------------*/
+
+
         /*  -------------------------- LINEAR TIME - O(n) -------------------------------------------------------*/
         const nemo = ['nemo'];
         const everyone = ['dory', 'bruce', 'marlin', 'gill', 'bloat', 'nigel', 'squirt', 'dara', 'hank', 'nemo'];
@@ -109,6 +112,9 @@
         findNemo(everyone);
         findNemo(large);
 
+        /*  ------------------------- LOG LINEAR TIME - O(log n) ----------------------------------------------*/
+
+
         /*  -------------------------- QUADRATIC TIME - O(n^2) ------------------------------------------------*/
         const letters = ['a', 'b', 'c', 'd', 'e'];
 
@@ -121,9 +127,11 @@
         }
         logAllPairs(letters);
 
-        /*  -------------------------- FACTORIAL TIME O(n!) ----------------------------------------------------*/
-        function factorialize(num) {
-            if (num === 0 || num === 1)
+        /*  ------------------------- LOG LINEAR TIME - O(2^n) ---------- ------------------------------------*/
+
+        
+        /*  -------------------------- FACTORIAL TIME - O(n!) ------------------------------------------------*/
+        function factorialize(num) {            if (num === 0 || num === 1)
                 console.log(1);
             for (var i = num - 1; i >= 1; i--) {
                 num *= i;
